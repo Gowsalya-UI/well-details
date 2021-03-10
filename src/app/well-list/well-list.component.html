@@ -1,0 +1,21 @@
+<h1>Well List</h1>
+<table class="table table-bordered">
+       <thead>
+         <tr class="info">
+           <th>Name</th>
+           <th>Type</th>
+           <th>Source</th>           
+         </tr>
+       </thead>
+       <tbody #sourceKey>
+         <tr *ngFor="let well of wellList?.wells;let i= index" (click)="clickedRow(well.sourceKey)">  
+           <td>{{well.name}}</td>
+           <td [ngClass]="{
+            'alert-success':well.type === 'esp',
+            'alert-danger':well.type === 'ris'           
+          }">{{well.type}}</td>            
+           <td>{{well.sourceKey}}</td>            
+         </tr>        
+       </tbody>
+</table>
+<app-well (emitAdd)="addWellList($event)"></app-well>

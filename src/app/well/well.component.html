@@ -1,0 +1,22 @@
+<form [formGroup]="wellForm">
+ 
+  <p>
+    <label for="name">Name </label>
+    <input type="text" id="name" formControlName="name">
+  </p>
+ 
+  <p>
+    <label for="type">Type </label>
+    <input type="text" id="type" formControlName="type">
+  </p>
+ 
+  <p>
+    <label for="sourceKey">Source Key </label>
+    <input type="text" #sourceKeyInput id="sourceKey" formControlName="sourceKey" disabled>
+  </p>
+  
+  <p>
+    <button type="submit" class="btn-primary" (click)="submitAdd()">Add Well</button>
+  </p>
+ 
+</form>
